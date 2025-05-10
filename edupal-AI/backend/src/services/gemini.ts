@@ -81,7 +81,7 @@ You are an expert assistant for last-minute exam preparation in the field of ${e
 `;
 
     const model = genAI.getGenerativeModel({
-      model: "gemini-1.5-pro-latest",
+      model: "gemini-2.5-flash-preview-04-17",
       systemInstruction,
     });
 
