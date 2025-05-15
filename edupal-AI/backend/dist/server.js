@@ -10,7 +10,11 @@ const ai_expert_routes_1 = __importDefault(require("./routes/ai-expert-routes"))
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)());
+app.use((0, cors_1.default)({
+    origin: ["http://localhost:5173", "http://localhost:5174"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true, // if you're using cookies or authorization headers
+}));
 const aiRouter = ai_expert_routes_1.default;
 app.use("/ai", aiRouter);
 const port = 5000;
